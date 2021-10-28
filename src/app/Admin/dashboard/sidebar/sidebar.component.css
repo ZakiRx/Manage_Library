@@ -1,11 +1,12 @@
 
 .admin-sidebar{
     position: fixed;
+    z-index: 100;
     min-height: 100vh;
     height: 100%;
     background: #0c163c;
     width: 70px;
-    padding: 10px 5px;
+    padding: 10px 0px;
     transition: .5s width ease-in-out;
 }
 .admin-sidebar.active{
@@ -17,12 +18,11 @@
     margin: 15px 10px;
     height: 30px;
     opacity: 0;
-    transition: .1s all ease-in-out;
    
 }
 .admin-sidebar.active .logo .logo-name{
     opacity: 1;
-    transition: 1s all ease-in-out;
+    transition: 1.5s all ease-in;
 
 }
 .logo .logo-name span{
@@ -66,15 +66,18 @@
     position: relative;
     margin-top: 25px;
 }
+.navigation ul{
+    padding: 10px;
+}
 .navigation ul li{
     position: relative;
     list-style: none;
     height: 50px;
+    width: 100%;
     line-height: 50px; 
-    margin: 10px 0;
-    margin:  15px 5px;
+    margin:  15px 0px;
+    padding: 0 15px;
     font-weight: 500;
-    
 }
 
 .navigation ul li:last-of-type{
@@ -92,33 +95,36 @@
     color: #0c163c;
 }
 .navigation ul li i{
-    margin: 15px 15px 0;
+    margin: 15px 0px;
     color: #fff;
     top: 2px;
     font-size: 18px;
     position: relative;
 }
-.navigation ul li a{
+.admin-sidebar .navigation ul li a{
     height: 100%;
     text-decoration: none;
     display: block;
-   
+    
 }
+
+
 .admin-sidebar ul li .tooltips{
     position: absolute;
     left: 135%;
     border-radius: 8px;
     color: black;
+    background: #fff;
     padding: 5px 20px;
     z-index: 999;
     box-shadow: -1px 3px 7px 0px rgb(0 0 0 / 18%);
-   display: none;
+    opacity: 0;
     transition: .5s all ease;
-    top:0px
+    top:0px;
+    pointer-events: none;
 }
 .admin-sidebar ul li:hover .tooltips{
     top: 8px;
-    display: inline-block;
     opacity: 1;
 }
 .admin-sidebar.active ul li .tooltips{
@@ -126,11 +132,11 @@
 }
 .navigation ul li  a span{
     color: #fff;
+    margin-left: 10px;
     opacity: 0;
-    
 }
 .admin-sidebar.active .navigation ul li a span{
     opacity: 1;
-    transition: 1.5s opacity ease-in-out;
+    transition: 2s opacity ease-in-out;
 }
 

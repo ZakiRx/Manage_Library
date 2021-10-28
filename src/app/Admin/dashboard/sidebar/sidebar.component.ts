@@ -13,7 +13,9 @@ export class SidebarComponent implements OnInit {
   }
   toggleSideBar(){
     let sidebar=document.querySelector(".admin-sidebar");
+    let content=document.querySelector(".content");
     sidebar.classList.toggle('active');
+    content.classList.toggle('active');
   }
 
 }

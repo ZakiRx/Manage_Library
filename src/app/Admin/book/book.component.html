@@ -1,0 +1,40 @@
+<div class="adimn-book">
+  <!-- [books] @input (books in child component) and "books" source from parent (books in parent component)-->
+  <!-- (bookCreated) is a event created in child component by EventEmmiter<> used  to send data from child to parent  by bookCreated.emit() -->
+  <!-- <app-form-book class="form-book"    [books]="books"  (bookCreated)=onBookAdded($event)></app-form-book> -->
+
+  <!-- <app-form-book class="form-book" [codeBook]="codeBook"></app-form-book> -->
+  <router-outlet></router-outlet>
+  <div class="header">
+    <h3>| Book List</h3>
+  </div>
+  <div class="book-list">
+    <button class="my-btn add-book" [routerLink]="['new']">
+      <i class="bx bx-plus"></i>New Book
+    </button>
+    <table class="table table-bordered book-table">
+      <thead>
+        <tr>
+          <th *ngFor="let header of headers">
+            {{ header }}
+          </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td *ngFor="let column of headers">
+            {{ book[column] }}
+          </td>
+          <td>
+            <button class="my-btn mr-2 btn-edit" [routerLink]="['edit', book['code']]">
+              <i class="bx bx-edit-alt"></i></button
+            ><button class="my-btn btn-delete" (click)="deleteBook(book['code'])">
+              <i class="bx bx-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
