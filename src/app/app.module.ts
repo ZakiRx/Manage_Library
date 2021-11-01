@@ -14,6 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookComponent } from './Admin/book/book.component';
 import { FormBookComponent } from './Admin/book/form-book/form-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListBookComponent } from './Admin/book/list-book/list-book.component';
+import { ItemBookComponent } from './Admin/book/list-book/item-book/item-book.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     BookComponent,
     FormBookComponent,
+    ListBookComponent,
+    ItemBookComponent,
   
   ],
   imports: [

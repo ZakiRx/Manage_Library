@@ -5,23 +5,35 @@
     <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
         <div class="form-groupe">
             <label for="title">Title</label>
-            <input type="text" class="my-input" id="title" formControlName="title">
+            <input type="text" class="my-input" id="title" formControlName="title" >
+            <div *ngIf="bookForm.get('title').invalid && (bookForm.get('title').dirty || bookForm.get('title').touched)">
+                <span class="msg-error">please enter a valid author name</span>  
+              </div>
         </div>
         <div class="form-groupe">
             <label for="author">Author</label>
             <input type="text" class="my-input"  id="author" formControlName="author">
+            <div *ngIf="bookForm.get('author').invalid && (bookForm.get('author').dirty || bookForm.get('author').touched)">
+              <span class="msg-error">please enter a valid author name</span>  
+            </div>
         </div>
         <div class="form-groupe">
             <label for="description">Description</label>
             <input type="text" class="my-input"  id="description" value={{codeBook}} formControlName="description">
+            <div *ngIf="bookForm.get('description').invalid && (bookForm.get('description').dirty || bookForm.get('description').touched) ">
+                <span class="msg-error">description is required</span>  
+              </div>
         </div>
         <div class="form-groupe">
             <label for="price">Price</label>
             <input type="text" class="my-input"  id="price"  formControlName="price">
+            <div *ngIf="bookForm.get('price').invalid && (bookForm.get('price').dirty || bookForm.get('price').touched)">
+                <span class="msg-error">please enter price</span>  
+              </div>
         </div>
         
-        <button class="my-btn book-btn" type="submit" *ngIf="codeBook!=null;else newBookLabel"> edit</button>
-        <ng-template #newBookLabel><button class="my-btn book-btn" type="submit">new</button></ng-template>
+        <button class="my-btn book-btn" type="submit" *ngIf="codeBook!=null;else newBookLabel" [disabled]="!bookForm.valid"> edit</button>
+        <ng-template #newBookLabel><button class="my-btn book-btn" type="submit" [disabled]="!bookForm.valid">new</button></ng-template>
 
     </form>
 </div>

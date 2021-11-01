@@ -1,0 +1,21 @@
+<div class="admin-book-item">
+    <h3>| Book</h3>
+    <div class="back">
+        <button [routerLink]="['/admin/book']" class="my-btn"><i class='bx bx-arrow-back' ></i> Back To List</button>
+    </div>
+    <div class="book-detail">
+        <div class="book-img">
+            <img src="" alt="image book"/>
+        </div>
+        <div class="book-info">
+            <span>Title :</span>
+            <p>{{book.title}}</p>
+            <span>Author :</span>
+            <p>{{book.author}}</p>
+            <span>Description :</span>
+            <p>{{book.description}}</p>
+            <span>Price :</span>
+            <p>{{book.price}}</p>
+        </div>
+    </div>
+</div>
