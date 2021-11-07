@@ -3,10 +3,15 @@
 <div class="header">
     <h3>| Book List</h3>
   </div>
+  
   <div class="book-list">
-    <button class="my-btn add-book" [routerLink]="['new']">
-      <i class="bx bx-plus"></i>New Book
-    </button>
+    <div class="book-list-header">
+      <button class="my-btn add-book" [routerLink]="['new']">
+        <i class="bx bx-plus"></i>New Book
+      </button>
+      <button (click)="changeOrder()" class="mb-2 my-btn order"><i class='bx bx-sort-alt-2'></i></button>
+    </div>
+    
     <table class="table table-bordered book-table">
       <thead>
         <tr>
@@ -17,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let book of books">
+        <tr *ngFor="let book of books |order:order">
           <td *ngFor="let column of headers">
             {{ book[column] }}
           </td>

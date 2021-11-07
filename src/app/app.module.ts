@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { SidebarComponent } from './Admin/dashboard/sidebar/sidebar.component';
-import { HomeComponent } from './Admin/dashboard/home/home.component';
+import { HomeComponent } from './Admin/home/home.component';
 import {MatTableModule} from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -16,6 +16,9 @@ import { FormBookComponent } from './Admin/book/form-book/form-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListBookComponent } from './Admin/book/list-book/list-book.component';
 import { ItemBookComponent } from './Admin/book/list-book/item-book/item-book.component';
+import { WordCountPipePipe } from './Admin/pipe/word-count.pipe';
+import { PowPipe } from './Admin/pipe/pow.pipe';
+import { OrderPipe } from './Admin/book/pipe/order.pipe';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { ItemBookComponent } from './Admin/book/list-book/item-book/item-book.co
     FormBookComponent,
     ListBookComponent,
     ItemBookComponent,
+    WordCountPipePipe,
+    PowPipe,
+    OrderPipe,
   
   ],
   imports: [

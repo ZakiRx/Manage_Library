@@ -5,7 +5,7 @@ import { FormBookComponent } from './Admin/book/form-book/form-book.component';
 import { ItemBookComponent } from './Admin/book/list-book/item-book/item-book.component';
 import { ListBookComponent } from './Admin/book/list-book/list-book.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
-import { HomeComponent } from './Admin/dashboard/home/home.component';
+import { HomeComponent } from './Admin/home/home.component';
 
 const routes: Routes = [
   { path: 'admin', redirectTo: '/admin/dashboard', pathMatch: 'full' },

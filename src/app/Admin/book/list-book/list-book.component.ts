@@ -9,6 +9,7 @@ import { BookElement, BookService } from '../service/book.service';
 export class ListBookComponent implements OnInit {
   headers: String[] = ['code', 'title','author','description','price'];
   books:BookElement[];
+  order:number=1;
   constructor(private bookService:BookService) { }
 
   ngOnInit(): void {
@@ -16,6 +17,10 @@ export class ListBookComponent implements OnInit {
   }
   deleteBook(code:string){
     this.bookService.delteBook(code);
+  }
+  changeOrder(){
+    this.order*=-1;
+    console.log(this.order);
   }
 
 
