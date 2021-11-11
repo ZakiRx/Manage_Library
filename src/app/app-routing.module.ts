@@ -6,9 +6,14 @@ import { ItemBookComponent } from './Admin/book/list-book/item-book/item-book.co
 import { ListBookComponent } from './Admin/book/list-book/list-book.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { HomeComponent } from './Admin/home/home.component';
+import { LoginComponent } from './Auth/login/login.component';
+import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: 'admin', redirectTo: '/admin/dashboard', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'signup', component: SignUpComponent, pathMatch: 'full' },
+
   {
     path: 'admin',
     component: DashboardComponent,
@@ -25,7 +30,7 @@ const routes: Routes = [
           {
             path: '',
             component: ListBookComponent,
-            children:[
+            children: [
               {
                 path: 'new',
                 component: FormBookComponent,
@@ -36,9 +41,9 @@ const routes: Routes = [
                 component: FormBookComponent,
                 pathMatch: 'full',
               },
-            ]
+            ],
           },
-          
+
           {
             path: ':id',
             component: ItemBookComponent,

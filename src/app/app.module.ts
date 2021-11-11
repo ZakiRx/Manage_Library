@@ -19,6 +19,8 @@ import { ItemBookComponent } from './Admin/book/list-book/item-book/item-book.co
 import { WordCountPipePipe } from './Admin/pipe/word-count.pipe';
 import { PowPipe } from './Admin/pipe/pow.pipe';
 import { OrderPipe } from './Admin/book/pipe/order.pipe';
+import { LoginComponent } from './Auth/login/login.component';
+import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { OrderPipe } from './Admin/book/pipe/order.pipe';
     WordCountPipePipe,
     PowPipe,
     OrderPipe,
+    LoginComponent,
+    SignUpComponent,
   
   ],
   imports: [
@@ -45,7 +49,7 @@ import { OrderPipe } from './Admin/book/pipe/order.pipe';
     MatSortModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
