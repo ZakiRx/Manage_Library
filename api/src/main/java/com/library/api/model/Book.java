@@ -19,7 +19,7 @@ public class Book {
   private double price;
   private short numberOfPage;
   private boolean verifiedBook=false;
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.REMOVE)
   private Author author;
   public Long getId() {
     return id;

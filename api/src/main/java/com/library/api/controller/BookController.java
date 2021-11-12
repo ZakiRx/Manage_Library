@@ -1,11 +1,11 @@
 package com.library.api.controller;
-import com.library.api.converter.BookConverter;
+import com.library.api.converter.book.BookConverter;
 import com.library.api.dto.BookDto;
-import com.library.api.model.Author;
 import com.library.api.model.Book;
 import com.library.api.service.AuthorService;
 import com.library.api.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +20,7 @@ public class BookController {
   @Autowired
   private AuthorService authorService;
   @Autowired
+  @Qualifier("bookConverter")
   private BookConverter bookConverter;
   @GetMapping("/")
   public List<BookDto> showBooks(){
@@ -34,7 +35,12 @@ public class BookController {
     }
   }
 
-  public ResponseEntity<String> newBook(@RequestBody )
+  @PostMapping("/new")
+  public ResponseEntity<String> newBook(@RequestBody BookDto bookDto){
+    Book book =  bookConverter.dtoToEntity(bookDto);
+    bookService.newBook(book);
+    return new ResponseEntity<>("book added",HttpStatus.CREATED);
+  }
 
 
 }

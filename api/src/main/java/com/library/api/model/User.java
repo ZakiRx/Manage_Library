@@ -12,6 +12,7 @@ public abstract class  User  {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+  @Column(unique = true,nullable = false)
   private String username;
   private String fristName;
   private String lastName;
@@ -22,6 +23,13 @@ public abstract class  User  {
   @ManyToMany(mappedBy = "users")
   private List<Role> roles;
 
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
 
   public void setUsername(String username) {
     this.username = username;

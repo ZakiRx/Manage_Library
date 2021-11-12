@@ -8,11 +8,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @EnableJpaRepositories("com.library.api.repository")
 public class BeansConfig {
-
-
-  @Bean
-  public ModelMapper modelMapper(){
-    return  new ModelMapper();
-  }
-
 }

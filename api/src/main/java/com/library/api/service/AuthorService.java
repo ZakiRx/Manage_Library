@@ -27,8 +27,8 @@ public class AuthorService {
   public List<Author> getAllAuthor(){
     return  authorRepository.findAll();
   }
-  public Optional<Author> getAuthorByName(String name){
-    return authorRepository.findByUsername(name);
+  public Optional<Author> getAuthorByUsername(String username){
+    return authorRepository.findByUsername(username);
   }
 
 }

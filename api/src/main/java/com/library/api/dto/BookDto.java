@@ -10,6 +10,7 @@ public class BookDto {
   @NotNull
   private String title;
   private String code;
+  private long userId;
   private String authorUsername;
 
 
@@ -35,6 +36,14 @@ public class BookDto {
 
   public void setCode(String code) {
     this.code = code;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
   }
 
   public String getAuthorUsername() {
