@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 
 export interface BookElement {
+  id:number;
   code: string;
   title: string;
   description: string;
-  author: string;
   price: number;
+  numberOfPage:string;
+  verified:boolean;
+  createdAt:Date;
+  updatedAt:Date;
+  author: string;
 }
 @Injectable({
   providedIn: 'root'

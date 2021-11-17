@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -36,7 +37,7 @@ public class BookController {
   }
 
   @PostMapping("/new")
-  public ResponseEntity<String> newBook(@RequestBody BookDto bookDto){
+  public ResponseEntity<String> newBook(@Valid @RequestBody BookDto bookDto){
     Book book =  bookConverter.dtoToEntity(bookDto);
     bookService.newBook(book);
     return new ResponseEntity<>("book added",HttpStatus.CREATED);

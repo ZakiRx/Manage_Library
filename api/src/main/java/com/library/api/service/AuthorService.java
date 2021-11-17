@@ -30,5 +30,8 @@ public class AuthorService {
   public Optional<Author> getAuthorByUsername(String username){
     return authorRepository.findByUsername(username);
   }
+  public Optional<Author> getAuthorById(long id){
+    return authorRepository.findById(id);
+  }
 
 }

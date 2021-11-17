@@ -38,7 +38,7 @@ public class BookService {
     return bookRepository.findAll();
   }
   public List<Book> getAllVerifiedBook(){
-    return bookRepository.findBooksByVerifiedBookTrue();
+    return bookRepository.findBooksByVerifiedTrue();
   }
   public List<Book> getBooksByAuthor(Author author){
     return bookRepository.findBooksByAuthor(author);

@@ -4,22 +4,26 @@ package com.library.api.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
 public abstract class  User  {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
   @Column(unique = true,nullable = false)
   private String username;
-  private String fristName;
+  private String firstName;
   private String lastName;
   private LocalDate birthDay;
   private String email;
   private String tel;
   private String password;
+  private LocalDateTime createdAt;
+  private LocalDateTime updatedAt;
   @ManyToMany(mappedBy = "users")
   private List<Role> roles;
 
@@ -39,12 +43,12 @@ public abstract class  User  {
     return username;
   }
 
-  public String getFristNamae() {
-    return fristName;
+  public String getFirstName() {
+    return firstName;
   }
 
-  public void setFristNamae(String fristName) {
-    this.fristName = fristName;
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
   }
 
   public String getLastName() {
@@ -58,7 +62,6 @@ public abstract class  User  {
   public LocalDate getBirthDay() {
     return birthDay;
   }
-
   public void setBirthDay(LocalDate birthDay) {
     this.birthDay = birthDay;
   }
@@ -93,5 +96,23 @@ public abstract class  User  {
 
   public String getPassword() {
     return password;
+  }
+
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  @PrePersist
+  private void setCreatedAt() {
+    this.createdAt = LocalDateTime.now();
+  }
+
+  public LocalDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+  @PreUpdate
+  private void setUpdatedAt() {
+    this.updatedAt = LocalDateTime.now();
   }
 }

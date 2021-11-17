@@ -18,7 +18,6 @@ export class FormBookComponent implements OnInit {
     price:new FormControl(0,[Validators.min(1),Validators.required]),
   };
   constructor( private formBuilder: FormBuilder,private bookService:BookService,private router:Router,private activeRoute:ActivatedRoute) { 
-  
   }
   ngOnInit(): void {
     console.log("load child ");

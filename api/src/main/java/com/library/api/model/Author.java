@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+//@DiscriminatorValue("zzzzz")
 public class Author extends User {
   @OneToMany(mappedBy = "author")
   private List<Book> books;

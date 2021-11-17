@@ -1,15 +1,31 @@
 package com.library.api.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class BookDto {
   private long id;
   @NotBlank
   @NotNull
+  @Size(min=3,max = 25)
   private String title;
+  @NotBlank
   private String code;
+  @NotBlank
+  @Length(min=10,max = 500)
+  private String description;
+  @NotNull
+  @Min(0)@Max(5000)
+  private double price;
+  @NotNull
+  @Min(0)
+  private short numberOfPage;
+  private boolean verified;
+  private LocalDateTime createdAt;
+  private LocalDateTime updatedAt;
   private long userId;
   private String authorUsername;
 
@@ -53,4 +69,48 @@ public class BookDto {
   public void setAuthorUsername(String authorUsername) {
     this.authorUsername = authorUsername;
   }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
+  }
+
+  public short getNumberOfPage() {
+    return numberOfPage;
+  }
+
+  public void setNumberOfPage(short numberOfPage) {
+    this.numberOfPage = numberOfPage;
+  }
+
+  public boolean getVerified() {
+    return verified;
+  }
+
+  public void setCreatedAt(LocalDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public void setUpdatedAt(LocalDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
+  }
+  public LocalDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
 }
